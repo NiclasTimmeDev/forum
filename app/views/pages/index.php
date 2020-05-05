@@ -1,0 +1,9 @@
+<?php
+require(APPROOT . "/views/includes/header.php");
+?>
+
+    <h1>INDEX</h1>
+
+
+<?php
+require(APPROOT . "/views/includes/footer.php");
