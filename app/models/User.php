@@ -6,6 +6,9 @@ class User extends Database
     private $email;
     private $password;
 
+    //=========================
+    /* Register a new User*/
+    //=========================
     public function registerUser($username, $email, $password)
     {
         //hash password
@@ -25,9 +28,11 @@ class User extends Database
         } else {
             return false;
         }
-
     }
 
+    //===========================
+    /*Find User by Mail*/
+    //===========================
     public function findUserByEmail($email)
     {
         //prepare sql-statement
@@ -39,12 +44,8 @@ class User extends Database
         ]);
 
         return $this->stmt->fetch();
-
     }
 
     public function login()
-    {
-
-    }
-
+    { }
 }

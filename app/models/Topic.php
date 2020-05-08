@@ -3,6 +3,20 @@
 
 class Topic extends Database
 {
+
+    //=======================
+    /* Find all topics */
+    //=======================
+    public function find_all_topics()
+    {
+        //prepare
+        $this->stmt = $this->pdo->prepare("SELECT * from topics");
+
+        //execute
+        $this->stmt->execute();
+        return $this->stmt->fetchAll();
+    }
+
     //========================
     //Find a topic by its name
     //========================
@@ -18,6 +32,39 @@ class Topic extends Database
 
         return $this->stmt->fetch();
     }
+
+    //========================
+    //Find a topic by its id
+    //========================
+    public function find_topic_by_id($topic_id)
+    {
+        //prepare SQL statement. Vars come from Database class
+        $this->stmt = $this->pdo->prepare("SELECT * from topics WHERE id = :id");
+
+        //execute statement
+        $this->stmt->execute([
+            ":id" => $topic_id
+        ]);
+
+        return $this->stmt->fetch();
+    }
+
+    //=========================
+    /* Find number of subcribers of a topic by id
+    */
+    //=========================
+    public function find_subscriber_number_by_id($topic_id)
+    {
+        //prepate sql statement
+        $this->stmt = $this->pdo->prepare("SELECT * FROM users_topics WHERE topic_ID = :topic_id");
+        $this->stmt->execute([
+            ":topic_id" => $topic_id
+        ]);
+
+        return $this->stmt->rowCount();
+    }
+
+
 
     //==================
     //create a new topic
@@ -70,7 +117,10 @@ class Topic extends Database
     }
 
     //============================================
-    //find all topics that a user is subscribed to
+    /*find all topics that a user is subscribed to
+    1. find all topic IDs that the user is subscribed to from the users_topics table
+    2. for each of these, find the respective topic info from the topics table
+    */
     //============================================
     public function findAllSubscriptionsByUserId($user_id)
     {
@@ -81,8 +131,18 @@ class Topic extends Database
             ":user_id" => $user_id
         ]);
 
-        //return fetching results
-        return $this->stmt->fetchAll();
+        $subscription_IDs = $this->stmt->fetchAll();
+
+
+
+        return array_map(function ($subscriptions) {
+            //prepare sql statement
+            $this->stmt = $this->pdo->prepare("SELECT * from topics WHERE id = :id");
+            $this->stmt->execute([
+                ":id" => $subscriptions->topic_id
+            ]);
+            return $this->stmt->fetch();
+        }, $subscription_IDs);
     }
 
     //===============================
@@ -99,6 +159,16 @@ class Topic extends Database
         ]);
 
         //return fetching results
+        return $this->stmt->fetch();
+    }
+
+    public function find_topic_info($subscriptions)
+    {
+        //prepare sql statement
+        $this->stmt = $this->pdo->prepare("SELECT * from topics WHERE id = :id");
+        $this->stmt->execute([
+            ":id" => $subscriptions->topic_id
+        ]);
         return $this->stmt->fetch();
     }
 }

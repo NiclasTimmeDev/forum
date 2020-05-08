@@ -5,6 +5,8 @@ class Users extends Controller
 {
     protected $userModel;
 
+    protected $topic_model;
+
     public function __construct()
     {
         //instantiate new User Object from User Class:
@@ -12,6 +14,11 @@ class Users extends Controller
         $this->userModel = $this->loadModel("User");
     }
 
+    //========================
+    /*Login for users
+    
+    */
+    //========================
     public function login()
     {
         $data = array(
@@ -42,7 +49,7 @@ class Users extends Controller
 
                 if (password_verify($data["password"], $user->password)) {
                     $this->createUserSession($user);
-                    redirect("pages/dashboards");
+                    redirect("dashboards");
                 } else {
                     $data["email_err"] = "Please check your credentials";
                     $data["password_err"] = "Please check your credentials";
@@ -132,7 +139,6 @@ class Users extends Controller
             } else {
                 $this->loadView("users/register", $data);
             }
-
         }
     }
 
