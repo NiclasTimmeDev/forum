@@ -1,5 +1,6 @@
 <?php
 require(APPROOT . "/views/includes/header.php");
+print_r($data);
 ?>
 
 <div class="container">
@@ -44,6 +45,20 @@ require(APPROOT . "/views/includes/header.php");
     <?php if (!isset($data["threads"])) : ?>
     <p>There are no threads for this topic</p>
     <a href="<?php echo URLROOT; ?>/threads/create/<?php echo $data["topic_id"]; ?>">Create Thread</a>
+    <?php else :
+            ?>
+    <ul class="list-group list-group-flush">
+        <?php
+                    foreach ($data["threads"] as $thread) {
+                        ?>
+        <li class="list-group-item"><?php echo $thread->name ?><div><a
+                    href="<?php echo URLROOT; ?>/threads/single/<?php echo $data["topic_id"]; ?>/<?php echo $thread->id; ?>">More</a>
+            </div>
+        </li>
+        <?php
+                    }
+                    ?>
+    </ul>
     <?php endif; ?>
 
 </div>

@@ -4,6 +4,7 @@
 class Topics extends Controller
 {
     protected $model;
+    protected $threadModel;
 
     protected $data = array(
         "topic_name" => "",
@@ -14,6 +15,7 @@ class Topics extends Controller
 
     public function __construct()
     {
+        $this->threadModel = $this->loadModel("Thread");
         $this->model = $this->loadModel("Topic");
     }
 
@@ -131,6 +133,8 @@ class Topics extends Controller
 
         //5.
         $data["subscribers_count"] = $subscribers_count;
+
+        $data["threads"] = $this->threadModel->get_threads_by_topic_id($topic_id);
 
         //6:
         $this->loadView("topics/single", $data);
