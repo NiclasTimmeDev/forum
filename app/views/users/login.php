@@ -6,7 +6,7 @@ require(APPROOT . "/views/includes/header.php");
             <div class="card card-body bg-light mt-5">
                 <h2>Login</h2>
                 <p>Log in to your Account</p>
-                <form action="<?php echo URLROOT ?>/users/login" method="post">
+                <form action="<?php echo URLROOT; ?>/users/login" method="post">
                     <div class="form-group">
                         <label for="email">E-Mail: <sup>*</sup></label>
                         <input type="text" name="email"
@@ -27,7 +27,7 @@ require(APPROOT . "/views/includes/header.php");
                             <input type="submit" value="Register" class="btn btn-success btn-block">
                         </div>
                         <div class="col">
-                            <a href="<?php echo URLROOT ?>/users/register" class='btn btn-light btn-block'>No account
+                            <a href="<?php echo URLROOT; ?>/users/register" class='btn btn-light btn-block'>No account
                                 yet?
                                 Sign up.</a>
                         </div>

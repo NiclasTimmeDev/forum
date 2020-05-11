@@ -3,6 +3,7 @@
 class Threads extends Controller
 {
     protected $model;
+    protected $commentsModel;
 
 
     protected $data = array(
@@ -16,13 +17,13 @@ class Threads extends Controller
     public function __construct()
     {
         $this->model = $this->loadModel("Thread");
+        $this->commentsModel = $this->loadModel("Comment");
     }
 
     public function index()
     {
         redirect("threads/all");
     }
-
 
 
     public function create($topic_id)
@@ -35,7 +36,7 @@ class Threads extends Controller
             //Sanitize inputs
             $this->data["thread_name"] = filter_var($_POST["thread_name"], FILTER_SANITIZE_STRING);
             $this->data["thread_description"] = filter_var($_POST{
-                "thread_description"}, FILTER_SANITIZE_STRING);
+            "thread_description"}, FILTER_SANITIZE_STRING);
 
             //check validity
             if ($this->data["thread_name"] == "") {
@@ -80,7 +81,13 @@ class Threads extends Controller
     public function single($topic_id, $thread_id)
     {
         $data = [];
+
+        //get info for the thread
         $data["thread"] = $this->model->get_thread_by_topic_id_and_thread_id($topic_id, $thread_id);
+
+        //get all comments for the thread
+        $data["comments"] = $this->commentsModel->get_all_comments_by_thread_id($thread_id);
+
         $this->loadView("threads/single", $data);
     }
 }

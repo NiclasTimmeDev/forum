@@ -2,34 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f498db7-d7a7-4c2c-a4f2-027e8717ad5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/bootstrap.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/Dashboards.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/Pages.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/Topics.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/Users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/session_helper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/url_helper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/Core.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/Database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/Topic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/includes/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/includes/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/includes/navbar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/about.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/dashboard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/topics/create-topic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Comments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/comments/create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Threads.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Threads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/includes/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/includes/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/dashboards.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/dashboards.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/threads/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/threads/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/threads/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/threads/single.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/topics/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/topics/single.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +68,7 @@
       <workItem from="1588065069015" duration="4565000" />
       <workItem from="1588226939141" duration="24584000" />
       <workItem from="1588616382181" duration="5000" />
+      <workItem from="1589098297030" duration="9662000" />
     </task>
     <servers />
   </component>
@@ -95,25 +80,27 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="616" y="144" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1057/212.1103.1440.877@0.23.1920.1057" timestamp="1588605131618" />
-    <state x="682" y="342" key="NewPhpClassDialog" timestamp="1588600886550">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="512" y="288" key="NewPhpClassDialog" timestamp="1589098640789">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="682" y="326" key="NewPhpClassDialog/0.0.1920.1080/212.1080.1440.900@0.0.1920.1080" timestamp="1588066734064" />
+    <state x="512" y="288" key="NewPhpClassDialog/0.23.1440.877@0.23.1440.877" timestamp="1589098640789" />
     <state x="682" y="342" key="NewPhpClassDialog/0.23.1920.1057/212.1103.1440.877@0.23.1920.1057" timestamp="1588600886550" />
-    <state x="777" y="469" key="NewPhpFileDialog" timestamp="1588598956522">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="583" y="393" key="NewPhpFileDialog" timestamp="1589099674346">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="777" y="456" key="NewPhpFileDialog/0.0.1920.1080/212.1080.1440.900@0.0.1920.1080" timestamp="1588071407713" />
-    <state x="583" y="393" key="NewPhpFileDialog/0.23.1440.877@0.23.1440.877" timestamp="1588241837740" />
+    <state x="583" y="393" key="NewPhpFileDialog/0.23.1440.877@0.23.1440.877" timestamp="1589099674346" />
     <state x="777" y="469" key="NewPhpFileDialog/0.23.1920.1057/212.1103.1440.877@0.23.1920.1057" timestamp="1588598956522" />
     <state x="360" y="112" key="SettingsEditor" timestamp="1588228254267">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="360" y="91" key="SettingsEditor/0.0.1920.1080/212.1080.1440.900@0.0.1920.1080" timestamp="1588066282848" />
     <state x="360" y="112" key="SettingsEditor/0.23.1920.1057/212.1103.1440.877@0.23.1920.1057" timestamp="1588228254267" />
-    <state x="572" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1588605411169">
+    <state x="572" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1589208746142">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
+    <state x="572" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057/-1440.203.1440.877@0.23.1920.1057" timestamp="1589208746142" />
     <state x="572" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057/212.1103.1440.877@0.23.1920.1057" timestamp="1588605411169" />
   </component>
 </project>
